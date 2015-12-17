@@ -1,0 +1,28 @@
+<ion-view view-title="Stores">
+  <ion-content>
+    <div class="bar bar-header bar-assertive"
+         ng-show="isLoggedOut()">
+      <h1 class="title">
+        You must login to view this section.
+      </h1>
+    </div>
+    <div ng-hide="isLoggedOut()">
+      <form ng-submit="doSearch()" dovalidate>
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">City</span>
+            <input type="text" ng-model="searchData.city">
+          </label>
+          <label class="item">
+            <button class="button button-block button-positive" type="submit">{{status}}</button>
+          </label>
+        </div>
+      </form>
+    </div>
+    <ion-list ng-hide="isLoggedOut()">
+      <ion-item ng-repeat="item in items" href="#/app/storelist/{{item.storeId}}">
+        <strong>{{item.longName}}</strong> Phone: {{item.phone}} : {{item.storeId}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

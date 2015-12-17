@@ -1,0 +1,15 @@
+<ion-view view-title="Messages">
+  <ion-content>
+    <div class="bar bar-header bar-assertive"
+    ng-show="isLoggedOut()">
+    <h1 class="title">
+      You must login to view this section.
+    </h1>
+  </div>
+  <ion-list ng-hide="isLoggedOut()">
+    <ion-item ng-repeat="item in items" href="#/app/messagelist/{{item.id}}">
+      <strong>{{item.msg}}</strong> : {{item.datetime}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>

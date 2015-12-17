@@ -1,0 +1,51 @@
+<ion-view view-title="Product Search">
+  <ion-content drag-content="false">
+
+    <div class="bar bar-header bar-assertive"
+         ng-show="isLoggedOut()">
+      <h1 class="title">
+        You must login to view this section.
+      </h1>
+    </div>
+
+    <div ng-hide="isLoggedOut()">
+      <form ng-submit="doSearch()" dovalidate>
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Manufacturer</span>
+            <input type="text" ng-model="searchData.manufacturer" required="required">
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Short Description</span>
+            <input type="text" ng-model="searchData.shortDescription" required="required">
+          </label>
+
+          <label class="item">
+            <button class="button button-block button-positive" type="submit">Search</button>
+          </label>
+        </div>
+      </form>
+
+      <ion-slide-box>
+        <ion-slide ng-repeat="image in images">
+
+          <div class="list card">
+
+            <div class="item item-text-wrap">
+              <h2>{{image.name}}</h2>
+              <p>SKU {{image.sku}}</p>
+              <p>Sale Price: {{image.salePrice | currency}}</p>
+            </div>
+
+            <div class="item item-body">
+              <img src="{{image.MediaUrl}}">
+            </div>
+
+          </div>
+
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+  </ion-content>
+</ion-view>

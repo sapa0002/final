@@ -1,0 +1,46 @@
+{
+  "title": "Ionic Sample",
+  "version": "1.0.0",
+  "description": "An example to illustrate some basic Ionic and Angular concepts",
+  "author": {
+    "name": "SurrealRanch"
+  },
+  "contributors": [
+    {
+      "name": "Abix",
+      "email": "Abix86@gmail.com"
+    }
+  ],
+  "name": "IonicSample",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapa0002/finalDraft"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-cordovacli": "^0.8.2"
+  },
+  "cordovaPlugins": [
+    {
+      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
+      "id": "cordova-plugin-whitelist"
+    }
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ],
+  "dependencies": {
+    "cordova": "^5.4.1"
+  }
+}
